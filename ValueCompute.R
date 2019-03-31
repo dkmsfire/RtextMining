@@ -61,29 +61,54 @@ for(i in 1:nrow(term.doc.matrix)){
 
 #Cosine and Euclidean Distance Computation
 ###Cosine
-all.term <- rownames(doc.tf)
-loc <- which(all.term %in% term.doc.matrix[,N.docs+1])
-s.tdm <- doc.tf[loc,]
 cos.sim <- function(x, y){ x%*%y / sqrt(x%*%x * y%*%y) }
 query.vector = term.doc.matrix[,(N.docs+1)]
-tf.matrix <- doc.tf[, 1:N.docs]
 doc.cos <- apply(term.doc.matrix, 2, cos.sim, y = query.vector)
-TfCosine = doc.tf + doc.cos
-TfIdfCosine = doc.tfidf + doc.cos
 
 ###Euclidean Distance
+euclidean = function(x,y){
+  dist(rbind(x,y))
+}
+doc.Euclidean = apply(term.doc.matrix, 2, euclidean, y= query.vector)
 
-
+#Term Frequency (TF) Weighting + Cosine Similarity
 print("Term Frequency (TF) Weighting + Cosine Similarity : ")
-query.vector <- term.doc.matrix[, (N.docs + 1)]
-doc.scores <- t(query.vector) %*% TfCosine  #arguments imply differing number of rows
+doc.scores <- (t(query.vector) %*% doc.tf[,1:N.docs])   #arguments imply differing number of rows
 results.tf <- data.frame(doc = names(doc.list), score = t(doc.scores),
                          text = unlist(doc.list))
-results.tf <- results.tf[order(results.tf$score, decreasing = TRUE), ]
 results<- results.tf[,c(1,2)]
-print(results[1:5,], row.names = FALSE, right = FALSE, digits = 2)
+for(i in 1:2048){
+  results$realScore[i] = results$score[i] + doc.cos[i]
+}
+results <- results[order(results$realScore, decreasing = TRUE), ]
+print(results[1:5,c(1,3)], row.names = FALSE, right = FALSE, digits = 6)
+
+#Term Frequency (TF) Weighting + Euclidean Distance
 print("Term Frequency (TF) Weighting + Euclidean Distance : ")
+results<- results.tf[,c(1,2)]
+for(i in 1:2048){
+  results$realScore[i] = abs(results$score[i] - doc.Euclidean[i])
+}
+results <- results[order(results$realScore, decreasing  = FALSE), ]
+print(results[1:5,c(1,3)], row.names = FALSE, right = FALSE, digits = 6)
 
+#TF-IDF Weighting + Cosine Similarity
 print("TF-IDF Weighting + Cosine Similarity : ")
+doc.scores <- (t(query.vector) %*% doc.tfidf[,1:N.docs])   #arguments imply differing number of rows
+results.tfidf <- data.frame(doc = names(doc.list), score = t(doc.scores),
+                         text = unlist(doc.list))
+results<- results.tfidf[,c(1,2)]
+for(i in 1:2048){
+  results$realScore[i] = results$score[i] + doc.cos[i]
+}
+results <- results[order(results$realScore, decreasing = TRUE), ]
+print(results[1:5,c(1,3)], row.names = FALSE, right = FALSE, digits = 6)
 
+#TF-IDF Weighting + Euclidean Distance
 print("TF-IDF Weighting + Euclidean Distance : ")
+results<- results.tf[,c(1,2)]
+for(i in 1:2048){
+  results$realScore[i] = abs(results$score[i] - doc.Euclidean[i])
+}
+results <- results[order(results$realScore, decreasing  = FALSE), ]
+print(results[1:5,c(1,3)], row.names = FALSE, right = FALSE, digits = 6)
