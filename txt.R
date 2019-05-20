@@ -32,3 +32,36 @@ for(i in 1:6){
   }
   assign(paste0(names(model)[[i]], "pr"), data.frame(level, precision))
 }
+
+plot(jm1pr$precision, jm1pr$level)
+
+### precision-recall
+pr = list(okapi1pr, okapi2pr, tfidf1pr, tfidf2pr, jm1pr, jm2pr)
+doc = list(okapi1docs, okapi2docs, tfidf1docs, tfidf2docs, jm1docs, jm2docs)
+for(i in 1:6){
+  for(j in 1:2){
+    pr[[i]][[j]] = as.numeric(as.character(pr[[i]][[j]]))
+    doc[[i]][[j]] = as.numeric(as.character(doc[[i]][[j]]))
+  }
+}
+par(mfrow = c(2,1))
+for(i in 1:6){
+  plot(pr[[i]][[2]] ~ pr[[i]][[1]], main = "precision-recall plot", xlab = "Recall level", ylab = "Precision", xlim = c(0,1), type = "line")
+  plot(doc[[i]][[2]] ~ doc[[i]][[1]], main = "precision at docs plot", xlab = "Docs number", ylab = "Precision", type = "line")
+  
+}
+
+library(ggplot2)
+### model with stemming the p-r plot
+method = c("okapi", "Lapalce smoothing", "Jelinek-Mercer smoothing")
+pr1 = rbind(pr[[1]], pr[[3]], pr[[5]])
+pr1$group = c(rep("okapi", 11), rep("Laplace", 11), rep("Jelinek-Mercer", 11))
+
+ggplot(data = pr1, aes(x = level, y = precision, color = group)) +
+  geom_line() + xlab("Recall") + ggtitle("Method with stemming")
+
+
+### the precision at docs plot
+
+
+### model without stemming 
