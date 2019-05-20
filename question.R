@@ -889,6 +889,7 @@ middle-east countries or the U.S.
 library(tm)
 library(dplyr)
 library(Matrix)
+library(udpipe)
 library(NLP)
 library(openNLP)
 library(openNLPmodels.en)
@@ -906,3 +907,34 @@ for(i in 2:51){
 }
 question_split = question_split[[1]][2:51]
 
+##  get only nouns
+shhh(library(openNLP))
+extractPOS <- function(x, thisPOSregex) {
+  x <- as.String(x)
+  wordAnnotation <- annotate(x, list(Maxent_Sent_Token_Annotator(), Maxent_Word_Token_Annotator()))
+  POSAnnotation <- annotate(x, Maxent_POS_Tag_Annotator(), wordAnnotation)
+  POSwords <- subset(POSAnnotation, type == "word")
+  tags <- sapply(POSwords$features, '[[', "POS")
+  thisPOSindex <- grep(thisPOSregex, tags)
+  tokenizedAndTagged <- sprintf("%s/%s", x[POSwords][thisPOSindex], tags[thisPOSindex])
+  untokenizedAndTagged <- paste(tokenizedAndTagged, collapse = " ")
+  untokenizedAndTagged
+}
+query.tag = NULL
+for(i in 1:50){
+  query.tag[[i]] = paste(lapply(question_split[[i]] , extractPOS , "NN"))
+  query.tag[[i]] = strsplit(query.tag, "")
+  for(j in 1:length(query.tag[[i]])){
+    small.tag = list()
+    small.tag = strsplit(query.tag[[i]][j] , "/")
+    query.tag[[i]] = small.tag[[i]][j]
+  }
+  
+}
+query.tag = paste(lapply(question_split[[i]] , extractPOS , "NN") , lapply(query2 , extractPOS , "VB"))
+query2.tag = strsplit(query2.tag , " ")
+for(i in 1:length(query2.tag[[1]])){
+  small.tag = list()
+  small.tag = strsplit(query2.tag[[1]][i] , "/")
+  query.new = paste(query.new , small.tag[[1]][1])
+}
