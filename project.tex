@@ -1,6 +1,7 @@
 \documentclass[a4pper,11pt,onecolumn]{article}
 \setlength\parindent{2em}
 \usepackage{graphicx}
+\usepackage{mathtools}
 \title{Web Searching and Mining Project }
 \author{Shu Hong Liu}
 \begin{document}
@@ -19,14 +20,19 @@ Since 1992, a series of annual benchmarking evaluation exercises , called TREC (
 In WT2G, we can find that there are 247491 documents and about 1,500,000 unique words. That is a big challenge for me, because I studied in Statistic and the number of documents is too big for me to do something. Fortunately, professor Tsai recommend Indri toolkit to do information retrieval more easily than I thought before.
 \section{Method}
 Here I am going to introduce the methods that I used.
-\subsection{TF-IDF}
-TF-IDF
-\subsection{Okapi}
-Okapi
-\subsection{Language model}
-Langauage model
+\subsection{Vector Space Model}
+Okapi Tf and IDF
+\subsection{Language model with Laplace smoothing}
+
+\subsection{Language model with Jelinek-Mercer smoothing}
+In Jelinek-Mercer smoothing, I take 
 \section{Trials}
-I do many trials to test the methods I metioned previously.
+Before using methods that I metioned above, I construct two indexs, (1) without stemming, and (2) with stemming. In each index, I used all of methods above, so there will be 2 \times 4 runs.
+\subsection{without stemming}
+\subsubsection{TF-IDF}
+\subsubsection{Okapi}
+\subsection{with stemming}
+
 \section{Idea}
 In many trials , We can see that the results are bad enough. However , that means there's still room for improvement
 \section{Conclusion}
