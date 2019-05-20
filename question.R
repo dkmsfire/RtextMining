@@ -897,7 +897,7 @@ question_split = strsplit(Question, "<top>")
 
 clean <- function(x){
   x <-tolower(x)
-  x <-removeWords(x,stopwords('en'))
+  x <- removeWords(x,stopwords('en'))
   x <- removeWords(x, c("num", "number", "title", "desc", "description", "narr", "narrative"))
   x <-removePunctuation(x)
   x <-stripWhitespace(x)
