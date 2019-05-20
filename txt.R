@@ -14,7 +14,7 @@ load("model.rda")
 for(i in 1:6){
   docs = NULL
   precision = NULL
-  for(j in 20:29){
+  for(j in 20:28){
     num = stri_extract_all_regex(model[[i]][j,1], "[0-9.]+")
     docs[j - 19] = num[[1]][1]
     precision[j - 19] = num[[1]][2]
