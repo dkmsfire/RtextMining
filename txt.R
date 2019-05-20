@@ -52,16 +52,33 @@ for(i in 1:6){
 }
 
 library(ggplot2)
-### model with stemming the p-r plot
-method = c("okapi", "Lapalce smoothing", "Jelinek-Mercer smoothing")
+### model with stemming 
+##the p-r plot
 pr1 = rbind(pr[[1]], pr[[3]], pr[[5]])
 pr1$group = c(rep("okapi", 11), rep("Laplace", 11), rep("Jelinek-Mercer", 11))
 
 ggplot(data = pr1, aes(x = level, y = precision, color = group)) +
-  geom_line() + xlab("Recall") + ggtitle("Method with stemming")
+  geom_line() + xlab("Recall") + ggtitle("Method with stemming precision-recall plot")
 
+## the precision at docs plot
+doc1 = rbind(doc[[1]], doc[[3]], doc[[5]])
+doc1$group = c(rep("okapi", 9), rep("Laplace", 9), rep("Jelinek-Mercer", 9))
 
-### the precision at docs plot
+ggplot(data = doc1, aes(x = docs, y = precision, color = group)) +
+  geom_line() + xlab("Docs number") + ggtitle("Method with stemming precision at docs plot")
 
 
 ### model without stemming 
+##the p-r plot
+pr2 = rbind(pr[[2]], pr[[4]], pr[[6]])
+pr2$group = c(rep("okapi", 11), rep("Laplace", 11), rep("Jelinek-Mercer", 11))
+
+ggplot(data = pr2, aes(x = level, y = precision, color = group)) +
+  geom_line() + xlab("Recall") + ggtitle("Method without stemming precision-recall plot")
+
+## the precision at docs plot
+doc2 = rbind(doc[[2]], doc[[4]], doc[[6]])
+doc2$group = c(rep("okapi", 9), rep("Laplace", 9), rep("Jelinek-Mercer", 9))
+
+ggplot(data = doc2, aes(x = docs, y = precision, color = group)) +
+  geom_line() + xlab("Docs number") + ggtitle("Method without stemming precision at docs plot")
