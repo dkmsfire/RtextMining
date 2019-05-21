@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.19)  21 MAY 2019 02:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.19)  21 MAY 2019 14:47
 entering extended mode
 **./project.tex
 (project.tex
@@ -258,69 +258,81 @@ G,.JBIG2,.JB2,.eps]
 \openout4 = `project.lof'.
 
  [3]
-Overfull \hbox (3.89177pt too wide) in paragraph at lines 44--45
+Underfull \hbox (badness 10000) in paragraph at lines 42--43
+
+ []
+
+[4]
+Overfull \hbox (3.89177pt too wide) in paragraph at lines 47--48
 \OT1/cmr/bx/n/10.95 smooth-ing \OT1/cmr/m/n/10.95 here, and \OT1/cmr/bx/n/10.95
  Jelinek-Mercer smooth-ing \OT1/cmr/m/n/10.95 will be the next method.
  []
 
-[4] [5]
+[5]
 <./images/model2.png, id=25, 401.5pt x 351.3125pt>
 File: ./images/model2.png Graphic file (type png)
 <use ./images/model2.png>
-Package pdftex.def Info: ./images/model2.png  used on input line 78.
+Package pdftex.def Info: ./images/model2.png  used on input line 81.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
 <./images/model4.png, id=26, 401.5pt x 351.3125pt>
 File: ./images/model4.png Graphic file (type png)
 <use ./images/model4.png>
-Package pdftex.def Info: ./images/model4.png  used on input line 85.
+Package pdftex.def Info: ./images/model4.png  used on input line 88.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
  [6 <./images/model2.png>]
 <./images/model6.png, id=31, 401.5pt x 351.3125pt>
 File: ./images/model6.png Graphic file (type png)
 <use ./images/model6.png>
-Package pdftex.def Info: ./images/model6.png  used on input line 93.
-(pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
-<./images/no_stemming_pr.png, id=32, 401.5pt x 351.3125pt>
-File: ./images/no_stemming_pr.png Graphic file (type png)
-<use ./images/no_stemming_pr.png>
-Package pdftex.def Info: ./images/no_stemming_pr.png  used on input line 101.
+Package pdftex.def Info: ./images/model6.png  used on input line 96.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
  [7 <./images/model4.png> <./images/model6.png>]
+<./images/no_stemming_pr.png, id=38, 401.5pt x 351.3125pt>
+File: ./images/no_stemming_pr.png Graphic file (type png)
+<use ./images/no_stemming_pr.png>
+Package pdftex.def Info: ./images/no_stemming_pr.png  used on input line 105.
+(pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
 <./images/no_stemming_doc.png, id=39, 401.5pt x 351.3125pt>
 File: ./images/no_stemming_doc.png Graphic file (type png)
 <use ./images/no_stemming_doc.png>
-Package pdftex.def Info: ./images/no_stemming_doc.png  used on input line 107.
+Package pdftex.def Info: ./images/no_stemming_doc.png  used on input line 111.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
-<./images/model1.png, id=40, 401.5pt x 351.3125pt>
+
+[8 <./images/no_stemming_pr.png>]
+Overfull \hbox (4.27051pt too wide) in paragraph at lines 115--116
+[]\OT1/cmr/m/n/10.95 By fig-ure4 and fig-ure5, we can see that Jelinek-Mercer s
+mooth-ing method
+ []
+
+<./images/model1.png, id=44, 401.5pt x 351.3125pt>
 File: ./images/model1.png Graphic file (type png)
 <use ./images/model1.png>
-Package pdftex.def Info: ./images/model1.png  used on input line 116.
+Package pdftex.def Info: ./images/model1.png  used on input line 122.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
- [8 <./images/no_stemming_pr.png> <./images/no_stemming_doc.png>]
-<./images/model3.png, id=46, 401.5pt x 351.3125pt>
+[9 <./images/no_stemming_doc.png>]
+<./images/model3.png, id=49, 401.5pt x 351.3125pt>
 File: ./images/model3.png Graphic file (type png)
 <use ./images/model3.png>
-Package pdftex.def Info: ./images/model3.png  used on input line 123.
+Package pdftex.def Info: ./images/model3.png  used on input line 129.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
- [9 <./images/model1.png>]
-<./images/model5.png, id=51, 401.5pt x 351.3125pt>
+ [10 <./images/model1.png>]
+<./images/model5.png, id=54, 401.5pt x 351.3125pt>
 File: ./images/model5.png Graphic file (type png)
 <use ./images/model5.png>
-Package pdftex.def Info: ./images/model5.png  used on input line 130.
+Package pdftex.def Info: ./images/model5.png  used on input line 136.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
-<./images/stemming_pr.png, id=52, 401.5pt x 351.3125pt>
+<./images/stemming_pr.png, id=55, 401.5pt x 351.3125pt>
 File: ./images/stemming_pr.png Graphic file (type png)
 <use ./images/stemming_pr.png>
-Package pdftex.def Info: ./images/stemming_pr.png  used on input line 137.
+Package pdftex.def Info: ./images/stemming_pr.png  used on input line 144.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
- [10 <./images/model3.png> <./images/model5.png>]
-<./images/stemming_doc.png, id=58, 401.5pt x 351.3125pt>
+ [11 <./images/model3.png> <./images/model5.png>]
+<./images/stemming_doc.png, id=61, 401.5pt x 351.3125pt>
 File: ./images/stemming_doc.png Graphic file (type png)
 <use ./images/stemming_doc.png>
-Package pdftex.def Info: ./images/stemming_doc.png  used on input line 143.
+Package pdftex.def Info: ./images/stemming_doc.png  used on input line 150.
 (pdftex.def)             Requested size: 240.90184pt x 210.78911pt.
- [11 <./images/stemming_pr.png> <./images/stemming_doc.png>] [12] (project.aux)
- ) 
+ [12 <./images/stemming_pr.png>] [13 <./images/stemming_doc.png>] [14] (project
+.aux) ) 
 Here is how much of TeX's memory you used:
  2717 strings out of 492945
  40763 string characters out of 3126696
@@ -328,20 +340,20 @@ Here is how much of TeX's memory you used:
  6573 multiletter control sequences out of 15000+200000
  9709 words of font info for 35 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,6n,25p,558b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/User
-s/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
-fb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmsy10.pfb>
-Output written on project.pdf (12 pages, 163204 bytes).
+ 41i,7n,25p,561b,224s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:
+/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb>
+Output written on project.pdf (14 pages, 164689 bytes).
 PDF statistics:
- 93 PDF objects out of 1000 (max. 8388607)
+ 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

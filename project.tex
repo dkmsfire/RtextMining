@@ -38,7 +38,10 @@ So, I used \textbf{Okapi} TF times IDF value and inner product similarity to cal
 \[
     Okapi TF = \frac{tf}{tf + k1 \times ((1 - b) + b \times \frac{doclen}{avgdoclen})}
 \]
-At first, I set$$k1 = 2$$ and \[b = 0.75\] to see what is going on. The tuning parameter is important that will change result a lot.
+
+What does k1 and b mean? In this formula, we can see that when k1 is increasing, Okapi Tf will be decreasing. So, if we set k1 a bigger number, that means we care IDF more. After that, b is a parameter to control document length / average document length. Why we need to control document length / average document length? If the document length is too big, it may have a bigger term ferquency easily. So, we need to punish this situation. When b is increasing, the measurement of punishment also is increasing, so Okapi TF will be decreasing.\\
+
+At first, I set$$k1 = 2$$ and \[b = 0.75\] to see what is going on. The tuning parameter is important that will change result a lot, I want to do many trials to find the best tuning parameters in this project. 
 
 \subsection{Language model with Laplace smoothing}
 In language model, we have many smoothing methods. I used \textbf{Laplace smoothing} here, and \textbf{Jelinek-Mercer smoothing} will be the next method. In this method, I used maximum likelihood estimates with Laplace smoothing only, query likelihood.
@@ -62,14 +65,14 @@ In this way, we don't be afraid of the query term didn't appear in some document
     \rho_i = \lambda \times P + (1 - \lambda) \times Q
 \]
 where P is the estimated probability from document (max likelihood = \[ \frac{m_i}{n}\])\\
-and Q is the estimated probability from corpus (background probability = \[ \frac{cf}{terms in the corpus} \])
+and Q is the estimated probability from corpus (background probability = cf/terms in the corpus)
 
 \section{Trials}
 Before using methods that I mentioned above, I construct two indexes, (1) \textbf{without stemming}, and (2) \textbf{with stemming}. In each index, I used all of methods above, so there will be 6 runs.
 
 \subsection{WT2G without stemming}
 In this section, I constructed index without stemming, that is to say I barely did nothing. The reason I did nothing is that I wanted to know the baseline, just depend on the methods, how far that we can go.
-Let's see the results.
+Let's see the results. I will show (1) Precision-Recall plot and (2) Precision at docs plot to display how well does our model perform.
 
 \subsubsection{Vector Spcae Model}
 
@@ -94,7 +97,8 @@ Let's see the results.
     \centering
     \end{figure}
 
-\subsubsection{Combined}
+\subsubsection{Compare}
+In figure1, figure2 and figure3, we can see that the overall precision is not high enough. However, three methods still have different points. Let's compare them to see which one is better.
 
     \begin{figure}[H]
     \caption{Three methods Precision - Recall plot without stemming}
@@ -107,6 +111,8 @@ Let's see the results.
     \includegraphics[scale = 0.6]{no_stemming_doc.png}
     \centering
     \end{figure}
+
+By figure4 and figure5, we can see that Jelinek-Mercer smoothing method is the worse method in this trial. And, we can separate the results of Vector space model and Laplace smoothing, because the two methods are very similar. Both of them consider term frequency and do some smoothing, but the Jelinek-Mercer smoothing also consider the global term frequency, maybe that's the reason it can't perform well.
 
 \subsection{WT2G with stemming}
 
@@ -131,7 +137,8 @@ Let's see the results.
 \centering
 \end{figure}
 
-\subsubsection{Combined}
+\subsubsection{Compare}
+Three methods with stemming results are similar to methods without stemming, so let's compare them again.
 \begin{figure}[H]
 \caption{Three methods Precision-Recall plot with stemming}
 \includegraphics[scale = 0.6]{stemming_pr.png}
@@ -143,15 +150,12 @@ Let's see the results.
 \includegraphics[scale = 0.6]{stemming_doc.png}
 \centering
 \end{figure}
+By figure 9 and figure 10, we can get the same result like methods without stemmming. The Jelinek-Mercer smoothing method is still the worse way to smooth the term frequency.
+
+\newpage
 
 \section{Idea}
 In these trials , We can see that the results are bad enough. However, that means there's still room for improvement. I think that we can clean text by stemming, deleting stopwords, numbers and punctuation to get more accurate documents. Moreover, we can not only use queries' title from WT2G but also add nouns from queries' description and narrative which are used to describe more precisely about queries. Also, we can input qeury by query to find that in which query the method will work fine or in which query the method will work poor.
-
-\subsection{Interesting}
-
-\subsubsection{without stemming}
-
-\subsubsection{with stemming}
 
 \section{Conclusion}
 In this project, I learned the toolkit Indri and some methods for information retrieval. In my opinion, I think that all of these methods are similar, and only the smoothing ways are a little different. I want to know the ultimate solution to solve language.\textbf{How did language start? Where languages come from? Why was language created?}A language's appearance was a singular point, but why and how? I want to find these answers.

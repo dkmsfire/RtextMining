@@ -2,9 +2,9 @@
 \contentsline {figure}{\numberline {2}{\ignorespaces Language model with Laplace smoothing without stemming}}{7}% 
 \contentsline {figure}{\numberline {3}{\ignorespaces language model with Jelinek-Mercer smoothing without stemming}}{7}% 
 \contentsline {figure}{\numberline {4}{\ignorespaces Three methods Precision - Recall plot without stemming}}{8}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Three methods Precision at docs plot without stemming}}{8}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Vector Space Model with stemming}}{9}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Language model with Laplace smoothing with stemming}}{10}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Language model with Jelinek-Mercer smoothing with stemming}}{10}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces Three methods Precision-Recall plot with stemming}}{11}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Three methods Precision at docs plot with stemming}}{11}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Three methods Precision at docs plot without stemming}}{9}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Vector Space Model with stemming}}{10}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Language model with Laplace smoothing with stemming}}{11}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Language model with Jelinek-Mercer smoothing with stemming}}{11}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Three methods Precision-Recall plot with stemming}}{12}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Three methods Precision at docs plot with stemming}}{13}% 
